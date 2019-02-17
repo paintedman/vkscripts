@@ -3,7 +3,6 @@ function checkTagToRemove( tags ) {
     var tagFound = false;
     removeTags.forEach( function( removeTag ) {
         if ( tags.includes( removeTag ) ) {
-            console.log( 'found ' + removeTag );
             tagFound = true; 
         }
     });
@@ -25,10 +24,7 @@ var timerId = setInterval( function() {
         var footer = bookmarks[ idx ].lastElementChild.innerText;
         console.log( 'check ' + footer );
         if ( checkTagToRemove( footer ) ) {
-            console.log( bookmarks[ idx ] );
             bookmarks[ idx ].parentNode.removeChild( bookmarks[ idx ] );
-        } else {
-            console.log( 'nothing to delete...' )
         }
     }
-}, 2000 );
+}, 1000 );
